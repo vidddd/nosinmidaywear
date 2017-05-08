@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>#NoSinMiDayWear</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900" rel="stylesheet">
+<link href="css/estilos.css" rel="stylesheet" type="text/css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="js/galeria.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery.loadTemplate.min.js"></script>
+<meta name="viewport" content="width=600px, user-scalable=no">
+<meta name="description" content="Comparte todas las frases, multiplica las sonrisas y tus posibilidades de ganar una DayWear que regalaremos cada día. También podrás hacerte con un Kit exclusivo de productos DayWear que regalaremos al finalizar la promoción" />
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DayWear- Juega, Inspírate y ¡sonríe!">
+<meta name="twitter:description" content="Comparte todas las frases, multiplica las sonrisas y tus posibilidades de ganar una DayWear que regalaremos cada día. También podrás hacerte con un Kit exclusivo de productos DayWear que regalaremos al finalizar la promoción">
+<meta name="twitter:image" content="http://promocioneslauder.com/nosinmidaywear/images/Compartir_FB_LAUDER_V2.jpg">
+
+<meta property="og:title" content="DayWear- Juega, Inspírate y ¡sonríe!" />
+<meta property="og:url" content="http://promocioneslauder.com/nosinmidaywear" />
+<meta property="og:image" content="http://promocioneslauder.com/nosinmidaywear/images/Compartir_FB_LAUDER_V2.jpg" />
+<meta property="og:description" content="Comparte todas las frases, multiplica las sonrisas y tus posibilidades de ganar una DayWear que regalaremos cada día. También podrás hacerte con un Kit exclusivo de productos DayWear que regalaremos al finalizar la promoción" />
+<script type="text/html" id="template">
+   <!--- TEMPLATE ---->
+    <div id="imagenfinal">
+      <img data-src="picsrc" data-alt="picalt" class="imagen">
+    </div>
+    <div id="redesfinal">
+            <a data-href="facebook" target="_blank" onclick="ga('send', 'event', 'Botón', 'Resultado Facebook');"><img src="images/sharer_facebook.png"></a>
+            <a data-href="twitter" target="_blank" onclick="ga('send', 'event', 'Botón', 'Resultado Twitter');"><img src="images/sharer_twitter.png"></a>
+            <a data-href="download" target="_blank" onclick="ga('send', 'event', 'Botón', 'Resultado Descarga');" download><img src="images/sharer_download.png"></a>
+    </div>
+    <!--- TEMPLATE FIN ---->
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-70994954-4', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+<div id="cookies">
+  		<div class="arriba">
+        	<div class="destacado">USO DE COOKIES</div>
+        	<div class="cerrar" onClick="cerrar_cookies()">X</div>
+        </div>
+        <div class="abajo">
+       		<div class="texto">Utilizamos cookies propias para mejorar la experiencia de navegación. Puedes cambiar la configuración en cualquier momento en <u>Cambiar Configuración</u>.<br>
+            Si continúa navegando, consideramos que acepta su uso. <a href="#" target="_blank">Más Información</a>.</div>
+            <div class="aceptar" onClick="aceptar_cookies()">Aceptar</div>
+        </div>
+</div>
+    <header id="cabecera">
+        <a href="http://www.esteelauder.es" target="_blank" onclick="ga('send', 'event', 'Botón', 'Estee Lauder');"><img src="images/logo_header.png" class="logo_header"></a>
+        <nav>
+            <ul>
+                <li onClick="bajarSec('1');ga('send', 'event', 'Botón', 'Menu Home');">Home</li>
+                <li onClick="bajarSec('2');ga('send', 'event', 'Botón', 'Menu Daywear');">Daywear</li>
+                <li onClick="bajarSec('3');ga('send', 'event', 'Botón', 'Menu Galeria');">Galería</li>
+                <li onClick="bajarSec('4');ga('send', 'event', 'Botón', 'Menu Participa');">Participa</li>
+            </ul>
+        </nav>
+    </header>
+    <div id="intro"><img src="images/logo_intro.png"></div>
+    <div id="intro2">
+        <img src="images/hastag.png" class="hastag_intro">
+        <p class="info">Los pequeños detalles pueden alegrar el día a cualquiera. Sácale una sonrisa a esa persona tan especial con las frases inspiradoras. </p>
+        <span class="btn_intro" onClick="separarContenido();ga('send', 'event', 'Botón', 'Comenzar');">Comenzar</span>
+    </div>
+    <div id="intro3">
+    		<p>Escribe un número del 1 al 10</p>
+            <input type="number" min="1" max="10" id="numero" name="numero" value="">
+    </div>
+    <div id="intro4" style="display:none">
+    		<p>Elige un color</p>
+    </div>
+     <div id="botonfinal" onClick="color();" style="display:none"></div>
+    <div id="miboton" style="display:none" onClick="reproducirVideo();ga('send', 'event', 'Botón', 'Aceptar');">
+        Aceptar
+    </div>
+    <div id="volverajugar" style="display:none">
+    	<p>¿Quieres jugar otra vez?</p>
+        <span class="btn_intro" onClick="VolveraJugar();">Comenzar</span>
+    </div>
+    <div id="resultadofinal" style="display:none">
+    	<div id="cerrarresultado" onClick="ReiniciarJuego();"><img src="images/cerrar.png"></div>
+      	<div id="resultadoImg"></div>
+        <div id="textofinal">
+        	<h3>PARTICIPA E INSPÍRATE<br>24 DÍAS, 24 DAYWEAR, 24 HORAS</h3>
+            <p>Comparte tu frase motivadora favorita con los hashtags #NoSinMiDayWear #EsteeLauder #AnyDayWear y #Cremas a través de Twitter o Instagram, y consigue una de las DayWear Matte que sortearemos durante 24 días.</p>
+        </div>
+    </div>
+    <div id="alerta" style="display:none">
+   		<span onClick="cerrarAlerta();" class="btn">X</span>
+    	<p id="mensaje">Di que sí, ¡que nada te ponga límites!<br> Pero este juego solo funciona con un número del 1 al 10.</p>
+
+    </div>
+    <div id="objetos">
+        <img src="images/objetos/obj_01.png" id="obj_01" class="misobjetos">
+        <img src="images/objetos/obj_02.png" id="obj_02" class="misobjetos">
+        <img src="images/objetos/obj_03.png" id="obj_03" class="misobjetos">
+        <img src="images/objetos/obj_04.png" id="obj_04" class="misobjetos">
+        <img src="images/objetos/obj_05.png" id="obj_05" class="misobjetos">
+        <img src="images/objetos/obj_06.png" id="obj_06" class="misobjetos">
+        <img src="images/objetos/obj_07.png" id="obj_07" class="misobjetos">
+        <img src="images/objetos/obj_08.png" id="obj_08" class="misobjetos">
+        <img src="images/objetos/obj_09.png" id="obj_09" class="misobjetos">
+        <img src="images/objetos/obj_10.png" id="obj_10" class="misobjetos">
+        <img src="images/objetos/obj_11.png" id="obj_11" class="misobjetos">
+        <img src="images/objetos/obj_12.png" id="obj_12" class="misobjetos">
+        <img src="images/objetos/obj_13.png" id="obj_13" class="misobjetos">
+        <img src="images/objetos/obj_14.png" id="obj_14" class="misobjetos">
+        <img src="images/objetos/obj_15.png" id="obj_15" class="misobjetos">
+        <img src="images/objetos/obj_16.png" id="obj_16" class="misobjetos">
+        <img src="images/objetos/obj_17.png" id="obj_17" class="misobjetos">
+        <img src="images/objetos/obj_18.png" id="obj_18" class="misobjetos">
+        <img src="images/objetos/obj_19.png" id="obj_19" class="misobjetos">
+        <img src="images/objetos/obj_20.png" id="obj_20" class="misobjetos">
+    </div>
+    <section id="seccion_video" class="sec1">
+        <article id="miseccion">
+            <video src="videos/final.mp4" id="elvideo" preload playsinline></video>
+        </article>
+    </section>
+	<section id="seccion_daywear" class="sec2">
+    	<article>
+        	<div class="izq">
+            	<img src="images/daywear_title.png"  class="titulo">
+                <h1>Hidratación 24H.<br>Protección.<br>Prevención.</h1>
+            </div>
+            <div class="dch">
+            	<div class="mivideo">
+                	<iframe id="videoyoutube" src="https://www.youtube.com/embed/xMpdwMA0hps?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            	<div class="texto two-columns">
+                    <p>DayWear es un tratamiento creado para satisfacer de forma integral y con resultados duraderos las necesidades de tu piel.</p>
+                    <p>Nuestros productos te acompañarán durante todas las horas del día, protegiendo tu piel durante las horas de sol y regenerándola por las noches.</p>
+                    <p>Un aliado de todas las mujeres que saben que nunca es demasiado pronto para empezar a cuidarse.</p>
+                    <p>DayWear te ofrece, por menos de lo que esperas, la colección de productos más completa para que siempre encuentres la solución ideal para tu piel.<br>Únete al movimiento #NoSinMiDayWear y que nada detenga tu día.</p>
+            	</div>
+            	<div class="comprar">
+            		<a href="http://www.esteelauder.es/products/8242/product-catalog/tratamiento/colecciones/daywear-nightwear/index.tmpl" onclick="ga('send', 'event', 'Botón', 'Comprar');" target="_blank">Comprar ahora</a>
+            	</div>
+           </div>
+           <div class="central">
+           		<div class="productos">
+                <a href="http://www.esteelauder.es/product/8242/46486/product-catalog/tratamiento/colecciones/daywear-nightwear/daywear-matte/crema-gel-control-de-grasa-hidratacin-anti-oxidante/index.tmpl" onclick="ga('send', 'event', 'Botón', 'Producto DayWearMatte');" target="_blank">
+                	<div class="item_producto">
+                        <div class="imagenproducto">
+                            <img src="images/producto1.jpg">
+                        </div>
+                        <div class="descripcion">
+                            <h2>DayWear Matte</h2>
+                            <p>Gel Crema para pieles grasas.</p>
+                        </div>
+                    </div></a>
+                    <a href="http://www.esteelauder.es/product/8242/13158/product-catalog/tratamiento/colecciones/daywear-nightwear/daywear/advanced-multi-protection-anti-oxidant-creme-spf-15/index.tmpl" onclick="ga('send', 'event', 'Botón', 'Producto DayWear');" target="_blank">
+                    <div class="item_producto">
+                        <div class="imagenproducto">
+                            <img src="images/producto2.jpg">
+                        </div>
+                        <div class="descripcion">
+                            <h2>DayWear</h2>
+                            <p>Crema Multi-Protectora con Anti-Oxidantes avanzados. <br>FPS 15.</p>
+                        </div>
+                    </div></a>
+                    <a href="http://www.esteelauder.es/product/8242/37349/product-catalog/tratamiento/colecciones/daywear-nightwear/nightwear-plus/crema-anti-oxidante-detox/index.tmpl" onclick="ga('send', 'event', 'Botón', 'Producto NightWearPlus');" target="_blank">
+                    <div class="item_producto">
+                        <div class="imagenproducto">
+                            <img src="images/producto3.jpg">
+                        </div>
+                        <div class="descripcion">
+                            <h2>NightWear Plus</h2>
+                            <p>Crema Anti-Oxidante Detox.</p>
+                        </div>
+                    </div></a>
+                    <a href="http://www.esteelauder.es/product/8242/20671/product-catalog/tratamiento/colecciones/daywear-nightwear/daywear-bb-creme-fps-35/anti-oxidant-beauty-benefit-creme/index.tmpl" onclick="ga('send', 'event', 'Botón', 'Producto DayWearBB');" target="_blank">
+                    <div class="item_producto">
+                        <div class="imagenproducto">
+                            <img src="images/producto4.jpg">
+                        </div>
+                        <div class="descripcion">
+                            <h2>DayWear B<span class="mini">&bull;</span>B</h2>
+                            <p>Crema antioxidante con color. <br>FPS 35.</p>
+                        </div>
+                    </div></a>
+                </div>
+           </div>
+        </article>
+    </section>
+    <section id="seccion_galeria" class="sec3">
+        <article>
+        	  <div class="superior">
+            	<div class="izq"><img src="images/galeria_title.png" class="titulo"></div>
+                <div class="dch">Alegra tu día con toda la colección <strong>DayWear</strong><br> y estas frases inspiradoras.</div>
+            </div>
+            <div class="visor">
+            	<div class="izq">
+                    <div class="imagengrande" id="supersize">
+                    	<img src="images/gifs/1.gif" id="grande">
+                    </div>
+                    <div class="compartir">
+                    	<a id="facebook2" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//promocioneslauder.com/nosinmidaywear/images/gifs/1.gif&t=%23NoSinMiDayWear%20%23EsteeLauder%20%23Cremas%20" target="_blank" onclick="ga('send', 'event', 'Botón', 'Facebook');"><img src="images/sharer_facebook.png"></a>
+                      <a id="twitter2" href="https://twitter.com/home?status=%23NoSinMiDayWear%20%23EsteeLauder%20%23Cremas%20http://promocioneslauder.com/nosinmidaywear/images/gifs/1.gif" target="_blank" onclick="ga('send', 'event', 'Botón', 'Twitter Gif');"><img src="images/sharer_twitter.png"></a>
+                      <a id="download2" href="images/Mp4/1.mp4" target="_blank" onclick="ga('send', 'event', 'Botón', 'Descarga');" download><img src="images/sharer_download.png"></a>
+                    </div>
+                </div>
+                <div class="dch">
+                		<img src="images/galeria/preview1.jpg" onClick="CambiarImagen(1);ga('send', 'event', 'Botón', 'GIF1');" id="imagen1" class="activo">
+                        <img src="images/galeria/preview2.jpg" onClick="CambiarImagen(2);ga('send', 'event', 'Botón', 'GIF2');" id="imagen2">
+                        <img src="images/galeria/preview3.jpg" onClick="CambiarImagen(3);ga('send', 'event', 'Botón', 'GIF3');" id="imagen3">
+                        <img src="images/galeria/preview4.jpg" onClick="CambiarImagen(4);ga('send', 'event', 'Botón', 'GIF4');" id="imagen4">
+                        <img src="images/galeria/preview5.jpg" onClick="CambiarImagen(5);ga('send', 'event', 'Botón', 'GIF5');" id="imagen5">
+                        <img src="images/galeria/preview6.jpg" onClick="CambiarImagen(6);ga('send', 'event', 'Botón', 'GIF6');" id="imagen6">
+                        <img src="images/galeria/preview7.jpg" onClick="CambiarImagen(7);ga('send', 'event', 'Botón', 'GIF7');" id="imagen7">
+                        <img src="images/galeria/preview8.jpg" onClick="CambiarImagen(8);ga('send', 'event', 'Botón', 'GIF8');" id="imagen8">
+                        <img src="images/galeria/preview9.jpg" onClick="CambiarImagen(9);ga('send', 'event', 'Botón', 'GIF9');" id="imagen9">
+                        <img src="images/galeria/preview10.jpg" onClick="CambiarImagen(10);ga('send', 'event', 'Botón', 'GIF10');" id="imagen10">
+                        <img src="images/galeria/preview11.jpg" onClick="CambiarImagen(11);ga('send', 'event', 'Botón', 'GIF11');" id="imagen11">
+                        <img src="images/galeria/preview12.jpg" onClick="CambiarImagen(12);ga('send', 'event', 'Botón', 'GIF12');" id="imagen12">
+                        <img src="images/galeria/preview13.jpg" onClick="CambiarImagen(13);ga('send', 'event', 'Botón', 'GIF13');" id="imagen13">
+                        <img src="images/galeria/preview14.jpg" onClick="CambiarImagen(14);ga('send', 'event', 'Botón', 'GIF14');" id="imagen14">
+                        <img src="images/galeria/preview15.jpg" onClick="CambiarImagen(15);ga('send', 'event', 'Botón', 'GIF15');" id="imagen15">
+                        <img src="images/galeria/preview16.jpg" onClick="CambiarImagen(16);ga('send', 'event', 'Botón', 'GIF16');" id="imagen16">
+                        <img src="images/galeria/preview17.jpg" onClick="CambiarImagen(17);ga('send', 'event', 'Botón', 'GIF17');" id="imagen17">
+                        <img src="images/galeria/preview18.jpg" onClick="CambiarImagen(18);ga('send', 'event', 'Botón', 'GIF18');" id="imagen18">
+                        <img src="images/galeria/preview19.jpg" onClick="CambiarImagen(19);ga('send', 'event', 'Botón', 'GIF19');" id="imagen19">
+                        <img src="images/galeria/preview20.jpg" onClick="CambiarImagen(20);ga('send', 'event', 'Botón', 'GIF20');" id="imagen20">
+                        <img src="images/galeria/preview21.jpg" onClick="CambiarImagen(21);ga('send', 'event', 'Botón', 'GIF21');" id="imagen21">
+                        <img src="images/galeria/preview22.jpg" onClick="CambiarImagen(22);ga('send', 'event', 'Botón', 'GIF22');" id="imagen22">
+                        <img src="images/galeria/preview23.jpg" onClick="CambiarImagen(23);ga('send', 'event', 'Botón', 'GIF23');" id="imagen23">
+                        <img src="images/galeria/preview24.jpg" onClick="CambiarImagen(24);ga('send', 'event', 'Botón', 'GIF24');" id="imagen24">
+                </div>
+            </div>
+        </article>
+    </section>
+    <section id="seccion_nosinmidaywear" class="sec4">
+    	<article>
+        	<div class="superior">
+            	<img src="images/nosinmidaywear_title.png" class="titulo">
+            </div>
+            <div class="izq">
+            	<h3>¿Cómo puedes ganar tu DayWear?</h3>
+                <p>Durante los próximos 24 días, regalamos una crema <strong>DayWear</strong> cada día entre las participantes que compartan sus frases motivadoras favoritas con los hashtags #NoSinMiDayWear #EsteeLauder #AnyDayWear y #Cremas a través de Twitter e Instagram. </p>
+                <p>Además, cuantas más frases compartas, más posibilidades tendrás de ganar un <strong>pack completo DayWear</strong>. Recuerda, solo un pack completo entre todas las participantes. </p>
+                <p>¿Vas a ser tú la que se lo lleve?</p>
+            </div>
+            <div class="dch">
+            	<div class="hastag">
+                	#NoSinMiDayWear<br>#EsteeLauder<br>#AnyDayWear<br>#Cremas
+                </div>
+                <div class="redes">
+                	<img src="images/twitter_xl.png"><img src="images/instagram_xl.png">
+                </div>
+            </div>
+        </article>
+    </section>
+    <footer>
+    	<div class="legal">Puedes consultar <a href="#" target="_blank">aquí</a> las Bases legales del concurso.</div>
+        <div class="enlaces">
+            <a href="http://www.esteelauder.es/customer_service/contact_us.tmpl" onclick="ga('send', 'event', 'Botón', 'Contacto');" target="_blank">Contacta con nosotros</a>
+            <a href="http://www.esteelauder.es/locator/index.tmpl" onclick="ga('send', 'event', 'Botón', 'Localizador');" target="_blank">Localizador de Puntos de Venta</a>
+            <a href="http://www.esteelauder.es/cms/about/our_heritage.tmpl" onclick="ga('send', 'event', 'Botón', 'Sobre');" target="_blank">Sobre Estée Lauder</a>
+            <a href="http://www.esteelauder.es/cms/customer_service/terms.tmpl" onclick="ga('send', 'event', 'Botón', 'Terminos');" target="_blank">Terminos y Condiciones de Venta</a>
+        </div>
+    </footer>
+    <div id="botonaudio" onClick="PararReproducirMusica();">
+    	<div id="nota" class="desactivado"><img src="images/musica.png"></div>
+        <div id="selector" class="desactivado"><img src="images/botonsonido.png"></div>
+        <div id="conmutador" class="desactivado"></div>
+    </div>
+   <audio src="audio/music_loop.mp3" id="musica" play="false" loop preload="auto"></audio>
+  <script>
+      function loadR(){
+        var random = Math.floor((Math.random() * 24));
+        $("#resultadoImg").loadTemplate($("#template"),data[random]);
+      }
+  </script>
+</body>
+</html>
